@@ -1,7 +1,12 @@
-let a = prompt("metn daxil edin");
-let b = a.replaceAll(/[a-z]/gi, '')
-if (b === "number") {
-    console.log('reqem var')
-} else {
-    console.log('reqem yoxdur');
+let a = prompt("Mətn daxil edin");
+let b = a.replaceAll(/[^0-9]/g, '');
+console.log(b);
+for (let i = 0; i < b.length; i++) {
+    if (!isNaN(b[i])) {
+        console.log('Rəqəm var');
+        break;
+    }
+}
+if (b.length === 0) {
+    console.log('Rəqəm yoxdur');
 }
